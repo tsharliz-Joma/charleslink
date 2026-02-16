@@ -38,6 +38,28 @@
 	--button-border:1px solid #ffffff;
 }
 
+/* Custom Buttons */
+.button-blog {
+	--button-text:#ffffff;
+	--button-background:#1D4ED8;
+	--button-border:1px solid rgba(255,255,255,0.2);
+}
+.button-portfolio {
+	--button-text:#ffffff;
+	--button-background:#111827;
+	--button-border:1px solid rgba(255,255,255,0.2);
+}
+.button-rocket {
+	--button-text:#ffffff;
+	--button-background:#F97316;
+	--button-border:1px solid rgba(255,255,255,0.2);
+}
+.button-celebrant {
+	--button-text:#ffffff;
+	--button-background:#DB2777;
+	--button-border:1px solid rgba(255,255,255,0.2);
+}
+
 /* Amazon */
 .button-amazon {
 	--button-text:#000000;
