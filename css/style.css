@@ -225,14 +225,27 @@ footer {
 }
 }
 
+.site-footer {
+	text-align:center;
+}
+.site-footer .footer-link {
+	color:var(--footer-link-color, currentColor) !important;
+	text-decoration:none;
+}
+.site-footer .footer-link:hover {
+	color:var(--footer-link-color, currentColor) !important;
+	text-decoration:none;
+}
+
 /* Links
   –––––––––––––––––––––––––––––––––––––––––––––––––– */
   a {
-	color:#8ecbff;
+	color:var(--link-color, #8ecbff);
 	text-decoration:underline;
+	text-underline-offset:0.15em;
 }
 a:hover {
-	color:#c1e5ff;
+	color:var(--link-hover, #c1e5ff);
 }
 
 /* Buttons
@@ -326,6 +339,11 @@ a:hover {
 	outline: 2px solid #0B63CE;
 	outline-offset: 2px;
 }
+:root.theme-light {
+	--link-color:#0B63CE;
+	--link-hover:#08489B;
+	--footer-link-color:#0b1020 !important;
+}
 :root.theme-light body,
 :root.theme-auto body {
 	background-color:#eef2ff;
@@ -349,14 +367,6 @@ a:hover {
 	background-size:1200px 1200px, 100% 100%, 100% 100%;
 	opacity:0.75;
 }
-:root.theme-light a:not(.button),
-:root.theme-auto a:not(.button) {
-	color:#0B63CE;
-}
-:root.theme-light a:not(.button):hover,
-:root.theme-auto a:not(.button):hover {
-	color:#08489B;
-}
 
 /* Dark theme */
 :root.theme-dark {
@@ -370,11 +380,10 @@ a:hover {
 	background-color:#05060f;
 	color:#ffffff;
 }
-:root.theme-dark a:not(.button) {
-	color:#74C0FF;
-}
-:root.theme-dark a:not(.button):hover {
-	color:#9AD3FF;
+:root.theme-dark {
+	--link-color:#74C0FF;
+	--link-hover:#9AD3FF;
+	--footer-link-color:#f5f7ff !important;
 }
 :root.theme-dark .theme-toggle {
 	background:#1f1f1f;
@@ -393,6 +402,11 @@ a:hover {
 :root.theme-auto body {
 	background-color:#05060f;
 	color:#ffffff;
+}
+:root.theme-auto {
+	--link-color:#74C0FF;
+	--link-hover:#9AD3FF;
+	--footer-link-color:#f5f7ff !important;
 }
 :root.theme-auto body::before {
 	background-image:
@@ -414,11 +428,10 @@ a:hover {
     outline: 2px solid #4899F7;
     outline-offset: 2px;
   }
-:root.theme-auto a:not(.button) {
-	color:#74C0FF;
-}
-:root.theme-auto a:not(.button):hover {
-	color:#9AD3FF;
+:root.theme-auto {
+	--link-color:#0B63CE;
+	--link-hover:#08489B;
+	--footer-link-color:#0b1020 !important;
 }
 :root.theme-auto .theme-toggle {
 	background:#1f1f1f;
