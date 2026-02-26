@@ -144,27 +144,27 @@ body::after {
 –––––––––––––––––––––––––––––––––––––––––––––––––– */
 /* Base size - 16px browser default */
 :root {
-  font-size:16px;           /* Using a 1.25 modular scale for typography */
-  --scale-0:1rem;           /* 16px */
-  --scale-1:1.25rem;        /* 20px */
-  --scale-2:1.563rem;       /* 25px */
-  --scale-3:1.953rem;       /* 31px */
-  --scale-4:2.441rem;       /* 39px */
-  --scale-5:3.052rem;       /* 49px */
+  font-size:16px;
+  --scale-0:0.95rem;        /* 15px */
+  --scale-1:1.125rem;       /* 18px */
+  --scale-2:1.35rem;        /* 22px */
+  --scale-3:1.62rem;        /* 26px */
+  --scale-4:1.95rem;        /* 31px */
+  --scale-5:2.35rem;        /* 38px */
 
   /* Spacing units */
-  --spacing-xs:0.5rem;      /* 8px */
-  --spacing-s:1rem;         /* 16px */
-  --spacing-m:1.5rem;       /* 24px */
-  --spacing-l:2rem;         /* 32px */
-  --spacing-xl:3rem;        /* 48px */
-  --spacing-xxl:4rem;       /* 64px */
+  --spacing-xs:0.4rem;      /* 6px */
+  --spacing-s:0.8rem;       /* 13px */
+  --spacing-m:1.2rem;       /* 19px */
+  --spacing-l:1.6rem;       /* 26px */
+  --spacing-xl:2.4rem;      /* 38px */
+  --spacing-xxl:3.2rem;     /* 51px */
 }
 
 /* Avatar */
 .avatar {
-	width: 8rem;             /* 128px */
-	height: 8rem;
+	width: 10rem;             /* 128px */
+	height: 10rem;
 	border-radius: 50%;
 	object-fit: cover;
 	background-position: center;
@@ -172,7 +172,60 @@ body::after {
 	margin-left: auto;
 	margin-right: auto;
 	display: block;
-  }
+}
+
+.avatar-sprite {
+	--avatar-size: 128px;
+	--frame-w: 256px;
+	--frame-h: 512px;
+	--sheet-w: 1024px;
+	--sheet-h: 1024px;
+	--offset-x: calc((var(--avatar-size) - var(--frame-w)) / 2);
+	--offset-y: calc((var(--avatar-size) - var(--frame-h)) / 2);
+	width: var(--avatar-size);
+	height: var(--avatar-size);
+	background-image: url("../images/og-sprite.png");
+	background-repeat: no-repeat;
+	background-size: var(--sheet-w) var(--sheet-h);
+	background-position: var(--offset-x) var(--offset-y);
+	image-rendering: pixelated;
+	animation: sprite-8 1s linear infinite;
+}
+
+@keyframes sprite-8 {
+	0%,
+	12.499% {
+		background-position: calc(0px + var(--offset-x)) calc(0px + var(--offset-y));
+	}
+	12.5%,
+	24.999% {
+		background-position: calc(-256px + var(--offset-x)) calc(0px + var(--offset-y));
+	}
+	25%,
+	37.499% {
+		background-position: calc(-512px + var(--offset-x)) calc(0px + var(--offset-y));
+	}
+	37.5%,
+	49.999% {
+		background-position: calc(-768px + var(--offset-x)) calc(0px + var(--offset-y));
+	}
+	50%,
+	62.499% {
+		background-position: calc(0px + var(--offset-x)) calc(-512px + var(--offset-y));
+	}
+	62.5%,
+	74.999% {
+		background-position: calc(-256px + var(--offset-x)) calc(-512px + var(--offset-y));
+	}
+	75%,
+	87.499% {
+		background-position: calc(-512px + var(--offset-x)) calc(-512px + var(--offset-y));
+	}
+	87.5%,
+	100% {
+		background-position: calc(-768px + var(--offset-x)) calc(-512px + var(--offset-y));
+	}
+}
 
 /* Typography Scale */
 h1 {
@@ -254,10 +307,10 @@ a:hover {
 	display:inline-flex;
 	align-items:center;
 	justify-content:center;
-	width:18.75rem;             	/* 300px */
- 	min-height:3rem;                /* 48px */
-  	padding:0.75rem 1rem;         	/* 12px ; 16px */
-  	font-size:1.125rem;           	/* 18px */
+	width:16rem;             	    /* 256px */
+ 	min-height:2.75rem;            /* 44px */
+  	padding:0.6rem 0.9rem;         /* ~10px ; 14px */
+  	font-size:1rem;           	    /* 16px */
   	font-weight:700;
 	text-decoration:none;
 	white-space:normal;
@@ -297,9 +350,9 @@ a:hover {
 /* Icons
 –––––––––––––––––––––––––––––––––––––––––––––––––– */
 .icon {
-	width:1.25rem;
-	height:1.25rem;
-	margin-right:0.5rem;
+	width:1.1rem;
+	height:1.1rem;
+	margin-right:0.45rem;
 	flex-shrink:0;
 }
 
